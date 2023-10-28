@@ -5,5 +5,15 @@
   "main": "index.js",
   "repository": "https://github.com/teamartizen/react-components",
   "author": "Mohammed Shaheem P <shaheem.mpm@gmail.com> (https://shaheem.me)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.2.33",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
