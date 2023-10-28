@@ -1,0 +1,9 @@
+{
+  "name": "@teamartizen/react-components",
+  "version": "0.0.1",
+  "description": "Artizen React Components Libarary",
+  "main": "index.js",
+  "repository": "https://github.com/teamartizen/react-components",
+  "author": "Mohammed Shaheem P <shaheem.mpm@gmail.com> (https://shaheem.me)",
+  "license": "MIT"
+}
