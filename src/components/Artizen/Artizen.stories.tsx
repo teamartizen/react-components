@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof Artizen>;
 
 const meta: Meta<typeof Artizen> = {
-	title: "Artizen",
+	title: "Components/Artizen",
 	component: Artizen,
 	tags: ["autodocs"],
 	parameters: {

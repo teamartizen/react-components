@@ -1,6 +1,6 @@
 {
 	"name": "@teamartizen/react-components",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Artizen React Components Libarary",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
@@ -9,6 +9,7 @@
 	],
 	"types": "dist/index.d.ts",
 	"repository": "https://github.com/teamartizen/react-components",
+	"homepage": "https://teamartizen.github.io/react-components/",
 	"author": "Mohammed Shaheem P <shaheem.mpm@gmail.com> (https://shaheem.me)",
 	"license": "MIT",
 	"scripts": {
