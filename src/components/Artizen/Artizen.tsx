@@ -1,12 +1,12 @@
 import React from "react";
 
 export interface ArtizenProps {
-	type: "square" | "square-with-name" | "horizontal";
+	type?: "square" | "square-with-name" | "horizontal";
 	size?: number;
 }
 
 const Artizen = (props: ArtizenProps) => {
-	const { type, size = 250 } = props;
+	const { type = "square", size = 250 } = props;
 
 	if (type === "square") {
 		return (
