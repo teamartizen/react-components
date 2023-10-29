@@ -1,0 +1,68 @@
+.SheetTable {
+	background-color: white;
+	display: inline-block;
+}
+.SheetTable .SheetTable__table {
+	border-collapse: collapse;
+	cursor: default;
+}
+.SheetTable .SheetTable__table tr {
+	height: 25px;
+}
+.SheetTable .SheetTable__table td {
+	padding: 4px;
+	border: 1px solid #e8e8e8;
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+}
+.SheetTable .SheetTable__table .sl_no_column {
+	width: 84px;
+}
+.SheetTable .SheetTable__table .header_column {
+	background-color: rgba(0, 0, 0, 0.04);
+	text-align: center;
+	color: rgba(0, 0, 0, 0.4);
+}
+.SheetTable .SheetTable__table .editable_cell {
+	cursor: cell;
+	transition: background-color 0.2s;
+}
+.SheetTable .SheetTable__table .editable_cell:hover {
+	background-color: #31ac7136;
+}
+.SheetTable .SheetTable__table .active_cell {
+	border: 3px solid #31ac71;
+	position: relative;
+}
+.SheetTable .SheetTable__table .active_cell .active_cell__input {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: white;
+	outline: none;
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+}
+.SheetTable
+	.SheetTable__table
+	.active_cell
+	input[type="number"]::-webkit-inner-spin-button,
+.SheetTable
+	.SheetTable__table
+	.active_cell
+	input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	appearance: none;
+}
+.SheetTable .SheetTable__table .active_cell::after {
+	content: "";
+	position: absolute;
+	bottom: -7px;
+	right: -7px;
+	width: 8px;
+	height: 8px;
+	background: #31ac71;
+	border: 1px solid #31ac71;
+	border-radius: 50%;
+}
