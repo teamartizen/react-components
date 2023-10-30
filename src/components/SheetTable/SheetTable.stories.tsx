@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 import { Meta, StoryObj } from "@storybook/react";
 
-import { HeaderMetaType, SNBObject } from "../../types";
+import { HeaderMetaType } from "../../types";
 
 type Story = StoryObj<typeof SheetTable>;
 
@@ -90,7 +90,7 @@ const meta: Meta<typeof SheetTable> = {
 export const Default: Story = {
 	name: "Component",
 	render: (args) => {
-		const [tableData, setTableData] = useState<SNBObject[]>(initialTableData);
+		const [tableData, setTableData] = useState<any[]>(initialTableData);
 
 		return (
 			<SheetTable

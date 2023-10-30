@@ -1,11 +1,11 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CellInput from "./CellInput";
-import { HeaderMetaType, SNBObject } from "../../types";
+import { HeaderMetaType } from "../../types";
 import "./SheetTable.css";
 
 export interface SheetTableProps {
-	data: SNBObject[];
-	onChangeData: Dispatch<SetStateAction<SNBObject[]>>;
+	data: any[];
+	onChangeData: Dispatch<SetStateAction<any[]>>;
 	headers: HeaderMetaType[];
 	editingMode?: boolean;
 	showSlNo?: boolean;

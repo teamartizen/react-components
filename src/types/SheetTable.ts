@@ -8,7 +8,3 @@ export type HeaderMetaType = {
 	valueStyle?: CSSProperties;
 	editable?: boolean;
 };
-
-export type SNBObject = {
-	[key: string]: string | number | boolean;
-};
