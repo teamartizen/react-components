@@ -10,7 +10,10 @@
 
 An enterprise-class React UI library made with ❤️ by teamartizen.
 
-[![Follow Twitter][twitter-image]][twitter-url] [![Issues need help][help-wanted-image]][help-wanted-url] [![Deploy Storybook][deploy-storybook-image]][deploy-storybook-url]
+[![Follow Twitter][twitter-image]][twitter-url]
+[![Deploy Storybook][deploy-storybook-image]][deploy-storybook-url]
+
+<!-- [![Issues need help][help-wanted-image]][help-wanted-url] -->
 
 [help-wanted-image]: https://artizen-core.s3.ap-south-1.amazonaws.com/gh-tags/help-wanted.svg
 [help-wanted-url]: https://github.com/teamartizen/react-components/issues
