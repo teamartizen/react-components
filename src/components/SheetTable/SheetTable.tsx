@@ -16,7 +16,7 @@ const SheetTable = (props: SheetTableProps) => {
 		data,
 		onChangeData,
 		headers,
-		editingMode = true,
+		editingMode = false,
 		showSlNo = true,
 	} = props;
 
@@ -213,7 +213,9 @@ const SheetTable = (props: SheetTableProps) => {
 									activeIndices.row === rowIndex &&
 									activeIndices.col === colIndex;
 
-								if (col.editable && editingMode) {
+								const isCellEditable = col.editable && editingMode;
+
+								if (isCellEditable) {
 									classNames.push("editable_cell");
 								}
 
@@ -227,7 +229,7 @@ const SheetTable = (props: SheetTableProps) => {
 										style={col.style}
 										className={classNames.join(" ")}
 										onClick={() => {
-											if (col.editable) {
+											if (isCellEditable) {
 												setActiveIndices({ row: rowIndex, col: colIndex });
 											}
 										}}

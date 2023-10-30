@@ -47,19 +47,64 @@ const meta: Meta<typeof SheetTable> = {
 	title: "Components/SheetTable",
 	component: SheetTable,
 	tags: ["autodocs"],
+	argTypes: {
+		editingMode: {
+			options: [true, false],
+			control: { type: "radio" },
+			description: "Switch between editing and preview mode",
+			table: {
+				type: { summary: "boolean" },
+				defaultValue: { summary: false },
+			},
+		},
+		showSlNo: {
+			options: [true, false],
+			control: { type: "radio" },
+			description: "Show serial number column",
+			table: {
+				type: { summary: "boolean" },
+				defaultValue: { summary: false },
+			},
+		},
+		data: {
+			description: "data",
+			control: false,
+			table: {
+				type: { summary: "any[]" },
+			},
+		},
+		onChangeData: {
+			description: "data",
+			control: false,
+			table: {
+				type: { summary: "Dispatch<SetStateAction<any[]>>" },
+			},
+		},
+		headers: {
+			description: "data",
+			control: false,
+		},
+	},
 };
 
 export const Default: Story = {
-	render: () => {
+	name: "Component",
+	render: (args) => {
 		const [tableData, setTableData] = useState<SNBObject[]>(initialTableData);
 
 		return (
 			<SheetTable
+				editingMode={args.editingMode}
+				showSlNo={args.showSlNo}
 				data={tableData}
 				onChangeData={setTableData}
 				headers={headers}
 			/>
 		);
+	},
+	args: {
+		editingMode: false,
+		showSlNo: true,
 	},
 };
 
