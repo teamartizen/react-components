@@ -203,22 +203,29 @@ const SheetTable = (props: SheetTableProps) => {
 				<thead className="SheetTable__table__thead">
 					<tr>
 						{showSlNo && <td className="sl_no_column header_column"></td>}
-						{headers.map((header, ind) => (
-							<td
-								key={ind}
-								className="header_column"
-								style={header.headerStyle}
-							>
-								<div className="th-container">
-									{header.editable && editingMode && (
-										<button className="th-hover-button">
-											<Sort size="100%" />
-										</button>
-									)}
-									<span className="th-label">{header.label}</span>
-								</div>
-							</td>
-						))}
+						{headers.map((header, ind) => {
+							const sortable = !!header.sortable;
+							const filterable = !!header.filterable;
+
+							const showSortIcon = (sortable || filterable) && editingMode;
+
+							return (
+								<td
+									key={ind}
+									className="header_column"
+									style={header.headerStyle}
+								>
+									<div className="th-container">
+										{showSortIcon && (
+											<button className="th-hover-button">
+												<Sort size="100%" />
+											</button>
+										)}
+										<span className="th-label">{header.label}</span>
+									</div>
+								</td>
+							);
+						})}
 					</tr>
 				</thead>
 				<tbody className="SheetTable__table__tbody">

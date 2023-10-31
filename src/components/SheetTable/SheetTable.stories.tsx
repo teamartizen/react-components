@@ -32,6 +32,7 @@ const headers: HeaderMetaType[] = [
 		dataType: "string",
 		headerStyle: { width: "300px" },
 		editable: true,
+		filterable: true,
 	},
 	{
 		label: "Mark",
@@ -40,6 +41,7 @@ const headers: HeaderMetaType[] = [
 		headerStyle: { width: "100px" },
 		valueStyle: { textAlign: "center" },
 		editable: true,
+		sortable: true,
 	},
 ];
 
