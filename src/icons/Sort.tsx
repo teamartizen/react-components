@@ -2,7 +2,7 @@ import React from "react";
 import { IconProps } from "../types";
 
 const Sort = (props: IconProps) => {
-	const { size = 250 } = props;
+	const { size = "100" } = props;
 
 	return (
 		<svg

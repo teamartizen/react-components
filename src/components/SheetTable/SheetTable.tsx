@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CellInput from "./CellInput";
 import { CustomStyles, HeaderMetaType } from "../../types";
-import Sort from "../../icons/Sort";
+import Icon from "../Icon";
 import "./SheetTable.css";
 
 export interface SheetTableProps {
@@ -207,7 +207,7 @@ const SheetTable = (props: SheetTableProps) => {
 							const sortable = !!header.sortable;
 							const filterable = !!header.filterable;
 
-							const showSortIcon = (sortable || filterable) && editingMode;
+							const showSortIcon = sortable || filterable;
 
 							return (
 								<td
@@ -218,7 +218,7 @@ const SheetTable = (props: SheetTableProps) => {
 									<div className="th-container">
 										{showSortIcon && (
 											<button className="th-hover-button">
-												<Sort size="100%" />
+												<Icon icon="sort" size="100%" />
 											</button>
 										)}
 										<span className="th-label">{header.label}</span>
