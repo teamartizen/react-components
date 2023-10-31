@@ -1,3 +1,3 @@
 export interface IconProps {
-	size?: number;
+	size?: string;
 }
