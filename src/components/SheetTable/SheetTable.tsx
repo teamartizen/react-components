@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CellInput from "./CellInput";
 import { CustomStyles, HeaderMetaType } from "../../types";
+import Icon from "../Icon";
 import "./SheetTable.css";
 
 export interface SheetTableProps {
@@ -12,6 +13,7 @@ export interface SheetTableProps {
 	theme?: {
 		color: string;
 	};
+	onClickSort?: (dataKey: string) => void;
 }
 
 const SheetTable = (props: SheetTableProps) => {
@@ -24,6 +26,7 @@ const SheetTable = (props: SheetTableProps) => {
 		theme = {
 			color: "#31ac71",
 		},
+		onClickSort = (_) => {},
 	} = props;
 
 	const [activeIndices, setActiveIndices] = useState<{
@@ -208,7 +211,17 @@ const SheetTable = (props: SheetTableProps) => {
 								className="header_column"
 								style={header.headerStyle}
 							>
-								{header.label}
+								<div className="th-container">
+									{!!header.showSort && (
+										<button
+											className="th-hover-button"
+											onClick={() => onClickSort(header.dataKey)}
+										>
+											<Icon icon="sort" size="100%" />
+										</button>
+									)}
+									<span className="th-label">{header.label}</span>
+								</div>
 							</td>
 						))}
 					</tr>

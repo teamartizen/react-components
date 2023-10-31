@@ -8,6 +8,7 @@ export type HeaderMetaType = {
 	valueStyle?: CSSProperties;
 	activeValueStyle?: CSSProperties;
 	editable?: boolean;
+	showSort?: boolean;
 };
 
 export interface CustomStyles extends CSSProperties {

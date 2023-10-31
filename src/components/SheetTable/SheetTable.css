@@ -22,6 +22,34 @@
 	background-color: rgba(0, 0, 0, 0.04);
 	text-align: center;
 	color: rgba(0, 0, 0, 0.4);
+	position: relative;
+}
+.SheetTable .SheetTable__table .header_column .th-container {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+.SheetTable .SheetTable__table .header_column .th-container .th-hover-button {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: -1;
+	padding: 0;
+	border: none;
+	outline: none;
+	margin: 0;
+	background: transparent;
+	height: 100%;
+	cursor: pointer;
+}
+.SheetTable
+	.SheetTable__table
+	.header_column
+	.th-container:hover
+	.th-hover-button {
+	display: inline-block;
+	z-index: 1;
 }
 .SheetTable .SheetTable__table .editable_cell {
 	cursor: cell;
