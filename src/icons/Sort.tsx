@@ -15,20 +15,20 @@ const Sort = (props: IconProps) => {
 			<path
 				d="M22 7L2 7"
 				stroke="#1C274C"
-				stroke-width="1.5"
-				stroke-linecap="round"
+				strokeWidth="1.5"
+				strokeLinecap="round"
 			/>
 			<path
 				d="M19 12L5 12"
 				stroke="#1C274C"
-				stroke-width="1.5"
-				stroke-linecap="round"
+				strokeWidth="1.5"
+				strokeLinecap="round"
 			/>
 			<path
 				d="M16 17H8"
 				stroke="#1C274C"
-				stroke-width="1.5"
-				stroke-linecap="round"
+				strokeWidth="1.5"
+				strokeLinecap="round"
 			/>
 		</svg>
 	);
