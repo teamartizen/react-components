@@ -47,6 +47,16 @@ const meta: Meta<typeof SheetTable> = {
 	title: "Components/SheetTable",
 	component: SheetTable,
 	tags: ["autodocs"],
+	parameters: {
+		deepControls: { enabled: true },
+	},
+	args: {
+		editingMode: false,
+		showSlNo: true,
+		theme: {
+			color: "#029CFD",
+		},
+	},
 	argTypes: {
 		editingMode: {
 			options: [true, false],
@@ -66,12 +76,15 @@ const meta: Meta<typeof SheetTable> = {
 				defaultValue: { summary: false },
 			},
 		},
-		theme: {
-			description: "Configure theme of SheetTable",
-			control: false,
-			table: {
-				type: { summary: "{ color: string; }" },
+		// @ts-ignore
+		"theme.color": {
+			control: {
+				type: "color",
+				presetColors: ["red", "green"],
 			},
+		},
+		theme: {
+			control: false,
 		},
 		data: {
 			description: "Data to be displayed in the SheetTable",
@@ -109,13 +122,6 @@ export const Default: Story = {
 				headers={headers}
 			/>
 		);
-	},
-	args: {
-		editingMode: false,
-		showSlNo: true,
-		theme: {
-			color: "#029CFD",
-		},
 	},
 };
 
