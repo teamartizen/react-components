@@ -66,22 +66,29 @@ const meta: Meta<typeof SheetTable> = {
 				defaultValue: { summary: false },
 			},
 		},
+		theme: {
+			description: "Configure theme of SheetTable",
+			control: false,
+			table: {
+				type: { summary: "{ color: string; }" },
+			},
+		},
 		data: {
-			description: "data",
+			description: "Data to be displayed in the SheetTable",
 			control: false,
 			table: {
 				type: { summary: "any[]" },
 			},
 		},
 		onChangeData: {
-			description: "data",
+			description: "useState set funciton for data",
 			control: false,
 			table: {
 				type: { summary: "Dispatch<SetStateAction<any[]>>" },
 			},
 		},
 		headers: {
-			description: "data",
+			description: "Column configurations",
 			control: false,
 		},
 	},
@@ -94,6 +101,7 @@ export const Default: Story = {
 
 		return (
 			<SheetTable
+				theme={args.theme}
 				editingMode={args.editingMode}
 				showSlNo={args.showSlNo}
 				data={tableData}
@@ -105,6 +113,9 @@ export const Default: Story = {
 	args: {
 		editingMode: false,
 		showSlNo: true,
+		theme: {
+			color: "#029CFD",
+		},
 	},
 };
 

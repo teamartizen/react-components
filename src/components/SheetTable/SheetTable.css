@@ -28,10 +28,10 @@
 	transition: background-color 0.2s;
 }
 .SheetTable .SheetTable__table .editable_cell:hover {
-	background-color: #31ac7136;
+	background-color: var(--theme-accent-color, #00000020);
 }
 .SheetTable .SheetTable__table .active_cell {
-	border: 3px solid #31ac71;
+	border: 3px solid var(--theme-color, #000000);
 	position: relative;
 }
 .SheetTable .SheetTable__table .active_cell .active_cell__input {
@@ -62,7 +62,7 @@
 	right: -7px;
 	width: 8px;
 	height: 8px;
-	background: #31ac71;
-	border: 1px solid #31ac71;
+	background: var(--theme-color, #000000);
+	border: 1px solid var(--theme-color, #000000);
 	border-radius: 50%;
 }

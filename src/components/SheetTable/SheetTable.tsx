@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import CellInput from "./CellInput";
-import { HeaderMetaType } from "../../types";
+import { CustomStyles, HeaderMetaType } from "../../types";
 import "./SheetTable.css";
 
 export interface SheetTableProps {
@@ -9,6 +9,9 @@ export interface SheetTableProps {
 	headers: HeaderMetaType[];
 	editingMode?: boolean;
 	showSlNo?: boolean;
+	theme?: {
+		color: string;
+	};
 }
 
 const SheetTable = (props: SheetTableProps) => {
@@ -18,6 +21,9 @@ const SheetTable = (props: SheetTableProps) => {
 		headers,
 		editingMode = false,
 		showSlNo = true,
+		theme = {
+			color: "#31ac71",
+		},
 	} = props;
 
 	const [activeIndices, setActiveIndices] = useState<{
@@ -30,6 +36,7 @@ const SheetTable = (props: SheetTableProps) => {
 			value: dataLine[header.dataKey],
 			dataType: header.dataType,
 			style: header.valueStyle || {},
+			activeStyle: header.activeValueStyle || {},
 			editable: !!header.editable,
 		}))
 	);
@@ -184,8 +191,13 @@ const SheetTable = (props: SheetTableProps) => {
 		};
 	}, [activeIndices]);
 
+	const sheetTableStyle: CustomStyles = {
+		"--theme-color": theme.color,
+		"--theme-accent-color": `${theme.color}20`,
+	};
+
 	return (
-		<div className="SheetTable">
+		<div className="SheetTable" style={sheetTableStyle}>
 			<table className="SheetTable__table">
 				<thead className="SheetTable__table__thead">
 					<tr>
@@ -209,6 +221,7 @@ const SheetTable = (props: SheetTableProps) => {
 							)}
 							{row.map((col, colIndex) => {
 								const classNames = [];
+								let styles = { ...col.style };
 								const isCellActive =
 									activeIndices.row === rowIndex &&
 									activeIndices.col === colIndex;
@@ -221,12 +234,13 @@ const SheetTable = (props: SheetTableProps) => {
 
 								if (isCellActive) {
 									classNames.push("active_cell");
+									styles = { ...styles, ...col.activeStyle };
 								}
 
 								return (
 									<td
 										key={colIndex}
-										style={col.style}
+										style={styles}
 										className={classNames.join(" ")}
 										onClick={() => {
 											if (isCellEditable) {
