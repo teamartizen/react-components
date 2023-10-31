@@ -13,6 +13,7 @@ export interface SheetTableProps {
 	theme?: {
 		color: string;
 	};
+	onClickSort?: (dataKey: string) => void;
 }
 
 const SheetTable = (props: SheetTableProps) => {
@@ -25,6 +26,7 @@ const SheetTable = (props: SheetTableProps) => {
 		theme = {
 			color: "#31ac71",
 		},
+		onClickSort = (_) => {},
 	} = props;
 
 	const [activeIndices, setActiveIndices] = useState<{
@@ -203,29 +205,25 @@ const SheetTable = (props: SheetTableProps) => {
 				<thead className="SheetTable__table__thead">
 					<tr>
 						{showSlNo && <td className="sl_no_column header_column"></td>}
-						{headers.map((header, ind) => {
-							const sortable = !!header.sortable;
-							const filterable = !!header.filterable;
-
-							const showSortIcon = sortable || filterable;
-
-							return (
-								<td
-									key={ind}
-									className="header_column"
-									style={header.headerStyle}
-								>
-									<div className="th-container">
-										{showSortIcon && (
-											<button className="th-hover-button">
-												<Icon icon="sort" size="100%" />
-											</button>
-										)}
-										<span className="th-label">{header.label}</span>
-									</div>
-								</td>
-							);
-						})}
+						{headers.map((header, ind) => (
+							<td
+								key={ind}
+								className="header_column"
+								style={header.headerStyle}
+							>
+								<div className="th-container">
+									{!!header.showSort && (
+										<button
+											className="th-hover-button"
+											onClick={() => onClickSort(header.dataKey)}
+										>
+											<Icon icon="sort" size="100%" />
+										</button>
+									)}
+									<span className="th-label">{header.label}</span>
+								</div>
+							</td>
+						))}
 					</tr>
 				</thead>
 				<tbody className="SheetTable__table__tbody">

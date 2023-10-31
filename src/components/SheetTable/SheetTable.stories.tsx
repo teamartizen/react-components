@@ -32,7 +32,7 @@ const headers: HeaderMetaType[] = [
 		dataType: "string",
 		headerStyle: { width: "300px" },
 		editable: true,
-		filterable: true,
+		showSort: true,
 	},
 	{
 		label: "Mark",
@@ -41,7 +41,7 @@ const headers: HeaderMetaType[] = [
 		headerStyle: { width: "100px" },
 		valueStyle: { textAlign: "center" },
 		editable: true,
-		sortable: true,
+		showSort: true,
 	},
 ];
 
@@ -122,6 +122,9 @@ export const Default: Story = {
 				data={tableData}
 				onChangeData={setTableData}
 				headers={headers}
+				onClickSort={(key) => {
+					console.log("clicked on: ", key);
+				}}
 			/>
 		);
 	},
