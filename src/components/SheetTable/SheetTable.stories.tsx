@@ -4,10 +4,12 @@ import SheetTable from "./SheetTable";
 import React, { useState } from "react";
 
 import { Meta, StoryObj } from "@storybook/react";
+import type { TypeWithDeepControls } from "storybook-addon-deep-controls";
 
 import { HeaderMetaType } from "../../types";
 
 type Story = StoryObj<typeof SheetTable>;
+type MetaType = Meta<typeof SheetTable>;
 
 const initialTableData = [
 	{ admNo: "23SA001", name: "John Smith", mark: 78 },
@@ -45,7 +47,7 @@ const headers: HeaderMetaType[] = [
 	},
 ];
 
-const meta: Meta<typeof SheetTable> = {
+const meta: TypeWithDeepControls<MetaType> = {
 	title: "Components/SheetTable",
 	component: SheetTable,
 	tags: ["autodocs"],
@@ -78,7 +80,6 @@ const meta: Meta<typeof SheetTable> = {
 				defaultValue: { summary: false },
 			},
 		},
-		// @ts-ignore
 		"theme.color": {
 			control: {
 				type: "color",

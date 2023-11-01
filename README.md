@@ -11,10 +11,13 @@
 An enterprise-class React UI library made with ❤️ by teamartizen.
 
 [![Follow Twitter][twitter-image]][twitter-url]
+[![NPM Version][npm-version-image]][npm-version-url]
 [![Deploy Storybook][deploy-storybook-image]][deploy-storybook-url]
 
 <!-- [![Issues need help][help-wanted-image]][help-wanted-url] -->
 
+[npm-version-image]: https://img.shields.io/npm/v/@teamartizen/react-components.svg
+[npm-version-url]: https://www.npmjs.com/package/@teamartizen/react-components
 [help-wanted-image]: https://artizen-core.s3.ap-south-1.amazonaws.com/gh-tags/help-wanted.svg
 [help-wanted-url]: https://github.com/teamartizen/react-components/issues
 [twitter-image]: https://artizen-core.s3.ap-south-1.amazonaws.com/gh-tags/teamartizen-on-x.svg
